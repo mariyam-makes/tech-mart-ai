@@ -1,0 +1,11 @@
+[
+  {"orderId":"ORD-101","customer":"Ali","product":"MacBook Air M3","category":"electronics","daysAgo":5,"status":"Return Approved"},
+  {"orderId":"ORD-102","customer":"Sara","product":"WH-1000XM5","category":"electronics","daysAgo":18,"status":"Status not recorded"},
+  {"orderId":"ORD-103","customer":"John","product":"Galaxy S25 Ultra","category":"electronics","daysAgo":3,"status":"Return Approved"},
+  {"orderId":"ORD-104","customer":"Mia","product":"Galaxy Tab S10 Ultra","category":"electronics","daysAgo":22,"status":"Status not recorded"},
+  {"orderId":"ORD-105","customer":"Abis","product":"WH-1000XM5","category":"electronics","daysAgo":18,"status":"Status not recorded"},
+  {"orderId":"ORD-106","customer":"Syed","product":"Galaxy S25 Ultra","category":"electronics","daysAgo":7,"status":"Return Approved"},
+  {"orderId":"ORD-107","customer":"Hussain","product":"WH-1000XM5","category":"electronics","daysAgo":10,"status":"Return Approved"},
+  {"orderId":"ORD-108","customer":"Abis","product":"MacBook Air M3","category":"electronics","daysAgo":0,"status":"Order Placed"},
+  {"orderId":"ORD-109","customer":"Ayyan","product":"Keychron K8 Pro","category":"electronics","daysAgo":0,"status":"Order Placed"}
+]

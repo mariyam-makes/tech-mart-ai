@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Alexa AI Support - Operations Console</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#100069",
+            "tertiary-fixed": "#ffddb8",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary": "#006a63",
+            "primary": "#2a14b4",
+            "on-background": "#0b1c30",
+            "on-secondary-fixed-variant": "#00504a",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#9cf2e8",
+            "on-surface": "#0b1c30",
+            "surface-container": "#e5eeff",
+            "surface": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "on-secondary": "#ffffff",
+            "primary-container": "#4338ca",
+            "on-secondary-container": "#006f67",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-primary": "#c3c0ff",
+            "tertiary-container": "#744800",
+            "on-primary-container": "#c1beff",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed-dim": "#80d5cb",
+            "primary-fixed-dim": "#c3c0ff",
+            "secondary-container": "#99efe5",
+            "background": "#f8f9ff",
+            "outline": "#777586",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "on-primary-fixed-variant": "#372abf",
+            "on-tertiary-container": "#ffb759",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#00201d",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-dim": "#cbdbf5",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "surface-tint": "#5148d7",
+            "primary-fixed": "#e3dfff",
+            "on-surface-variant": "#464554",
+            "tertiary": "#553300",
+            "outline-variant": "#c7c4d7",
+            "on-tertiary-fixed": "#2a1700",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-surface": "#213145"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "margin-sm": "1rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-surface antialiased overflow-x-hidden">
+<!-- SIDE NAVIGATION (Shared Component Anchor) -->
+<aside class="fixed top-0 left-0 bottom-0 w-60 z-30 w-60 h-screen flex flex-col justify-between bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="p-5">
+<!-- Brand & Agent Header -->
+<div class="flex items-center gap-3 pb-6 border-b border-outline-variant/50">
+<div class="relative flex-shrink-0">
+<img alt="Alexa AI Support Agent avatar glowing beacon" class="w-10 h-10 rounded-xl object-cover shadow-sm bg-primary-container p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByhP0Hvw_WII37EOyDnleWLTN2TwDu3sciCcsaoIWIR8tG5Sr3VpFY1OdEzjgAzoZ1AHk4BIH11kFMANV9EFsrXkgdTz-HHfGhA5dwfTcFUGuiNhAyl-H3cCX-lWWsJ1_z40ivhNLkz6bJyRHdWwos8YjDGuHZJb8AlUQ_Sf8LxXKo9hNJ62u3CsgHeg3cDfEkwRcHt_b8X2HGKUVNuiiIwN6kSOJ5puls2t5At5Vgh1af72DDRjY"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-secondary rounded-full border-2 border-surface-container-lowest ring-1 ring-secondary/20"></span>
+</div>
+<div class="min-w-0 flex-1">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary truncate">TechMart Support</h1>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant truncate">Alexa AI v2.4 Online</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-4">
+<button class="w-full flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary/90 active:scale-[0.98] transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_comment</span>
+<span>New Chat Session</span>
+</button>
+</div>
+<!-- Nav Items -->
+<nav class="mt-6 flex flex-col space-y-1">
+<!-- Chat (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-[0.98]" href="#chat">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="font-label-md text-label-md">Chat</span>
+</a>
+<!-- Orders (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-[0.98]" href="#orders">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="font-label-md text-label-md">Orders</span>
+<span class="ml-auto font-label-sm text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded-md text-primary font-bold">18k</span>
+</a>
+<!-- Refunds (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-[0.98]" href="#refunds">
+<span class="material-symbols-outlined text-[20px]">assignment_return</span>
+<span class="font-label-md text-label-md">Refunds</span>
+<span class="ml-auto font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full text-secondary font-bold">342</span>
+</a>
+<!-- Support Logs (ACTIVE NAVIGATION TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-surface-container-low dark:bg-surface-container text-primary dark:text-inverse-primary font-semibold shadow-xs" href="#logs">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-label-md text-label-md">Support Logs</span>
+<span class="ml-auto w-2 h-2 rounded-full bg-primary"></span>
+</a>
+<!-- Products (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-[0.98]" href="#products">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<!-- Settings (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low hover:text-on-surface transition-colors active:scale-[0.98]" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-4 border-t border-outline-variant/40 bg-surface-container-lowest/50">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors text-label-md font-label-md" href="#help">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span>Help &amp; Docs</span>
+</a>
+<div class="mt-3 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant/80 px-2">
+<span class="font-label-sm text-[10px] tracking-wider uppercase">Alexa Engine v2.4</span>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Latency: 140ms</span>
+</div>
+</div>
+</aside>
+<!-- MAIN WRAPPER -->
+<div class="ml-60 flex flex-col min-h-screen bg-surface">
+<!-- TOP NAVIGATION BAR (Shared Component Anchor) -->
+<header class="sticky top-0 right-0 left-60 z-20 flex justify-between items-center px-6 py-3.5 bg-surface/85 dark:bg-inverse-surface/85 backdrop-blur-md border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<!-- Search on Left -->
+<div class="flex items-center gap-6 flex-1 max-w-xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant/80 rounded-xl text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all shadow-xs" placeholder="Search queries, customer names, SKUs, or Order IDs..." type="text"/>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-5">
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Console</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface pb-1 transition-colors" href="#">Live Orders</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface pb-1 transition-colors" href="#">Catalog</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface pb-1 transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<!-- Trailing Cluster -->
+<div class="flex items-center gap-3">
+<button class="px-3 py-1.5 rounded-xl border border-outline-variant bg-surface-container-lowest font-label-md text-label-md text-on-surface hover:bg-surface-container-low hover:border-outline transition-colors shadow-xs active:scale-[0.98] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-outline">download</span>
+<span>Export Log</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-xl bg-error/10 border border-error/20 text-error hover:bg-error/20 font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[17px]">support_agent</span>
+<span>Escalate to Human</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/60 mx-1"></div>
+<button class="p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<button class="p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/40">
+<img class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" data-alt="Support Supervisor active profile portrait in modern bright corporate lighting, looking professional with headset, dressed in navy minimalist blazer with neutral high-tech background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWkerXF_RtaWeCj-JYngDnSnbIyxd8hRgwLgsnZJSj9g2H8cX_c6iO3a75JQ9IlwppQoC4fcI4sCtY-pVbfnUINZGbDIIKfYPHFPY7Kp6_yxcOOpZE7B1vUdYsCUui4DyTSyi_m3Imc_4YiCZ0vvgYhgreKykkSisQdjt1jEA0Y12YWxoyBGcj-XNSvKGroDxSE1k6v0TEoyDO-HRNv0PmqX_mj92-2SfUZZQD_I5-JI3bRIhMzHI"/>
+<div class="hidden xl:block text-left">
+<p class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Marcus Vance</p>
+<p class="font-label-sm text-[10px] text-on-surface-variant">Lead AI Supervisor</p>
+</div>
+</div>
+</div>
+</header>
+<!-- CONTENT CANVAS -->
+<main class="flex-1 p-6 space-y-6 max-w-[1600px] w-full mx-auto">
+<!-- HERO HEADER -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-6 shadow-xs relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-80 bg-gradient-to-l from-primary/5 via-primary/[0.02] to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary border border-primary/20 font-bold uppercase tracking-wider">Ops Console</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Real-Time Automated Decision Stream</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Support Operations &amp; AI Audit Console</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            Real-time records of AI automated decisions, customer queries, catalog queries, and order statuses.
+          </p>
+</div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-xl border border-outline-variant/50">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<div class="text-left">
+<span class="block font-label-sm text-[10px] uppercase text-on-surface-variant font-bold tracking-wider">Alexa Auto-Resolve</span>
+<span class="font-label-md text-label-md font-bold text-primary">88.4% Autonomous</span>
+</div>
+</div>
+<button class="px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary/90 transition-all flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Sync Engine</span>
+</button>
+</div>
+</div>
+<!-- 4 TOP KPI METRICS CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- Card 1: Total Products -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-5 shadow-xs hover:border-outline/80 transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Total Products in Catalog</span>
+<div class="w-9 h-9 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">5,420</span>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-0.5 font-bold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14 this week
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-outline">verified</span> 100% SKU sync across live warehouses
+          </p>
+</div>
+<!-- Card 2: Total Orders Tracked -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-5 shadow-xs hover:border-outline/80 transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Total Orders Tracked</span>
+<div class="w-9 h-9 rounded-xl bg-secondary-container/25 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">18,940</span>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">
+              99.2% on-time
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span> Automated logistics feeds updated 4m ago
+          </p>
+</div>
+<!-- Card 3: Refund Requests Logged -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-5 shadow-xs hover:border-outline/80 transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Refund Requests Logged</span>
+<div class="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center text-amber-700 border border-amber-200/50">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">342</span>
+<span class="font-label-sm text-label-sm text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full font-bold">
+              28 today
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-amber-600">auto_mode</span> Instant policy evaluation via Alexa v2.4
+          </p>
+</div>
+<!-- Card 4: Approved Refunds -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-5 shadow-xs hover:border-outline/80 transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Approved Refunds</span>
+<div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">318</span>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">
+              93% rate
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">mail</span> Prepaid shipping labels generated in &lt;3s
+          </p>
+</div>
+</section>
+<!-- TABBED DATA EXPLORER INTERFACE -->
+<section class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl shadow-sm overflow-hidden" id="tabbed-explorer">
+<!-- Tab Navigation Bar -->
+<div class="border-b border-outline-variant/70 px-6 pt-4 flex flex-wrap items-center justify-between gap-4 bg-surface-container-low/30">
+<div class="flex space-x-2" role="tablist">
+<button class="px-4 py-3 font-label-md text-label-md font-bold text-primary border-b-2 border-primary flex items-center gap-2 transition-all" id="tab-btn-audit" onclick="switchTab('audit-logs')">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Support Logs &amp; Audit Trail</span>
+<span class="bg-primary/10 text-primary text-label-sm px-2 py-0.5 rounded-full font-bold">Live</span>
+</button>
+<button class="px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface border-b-2 border-transparent hover:border-outline-variant flex items-center gap-2 transition-all" id="tab-btn-catalog" onclick="switchTab('catalog')">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span>Product Catalog Quick View</span>
+<span class="bg-surface-container text-on-surface-variant text-label-sm px-2 py-0.5 rounded-full font-medium">5 SKUs</span>
+</button>
+<button class="px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface border-b-2 border-transparent hover:border-outline-variant flex items-center gap-2 transition-all" id="tab-btn-refunds" onclick="switchTab('refunds-center')">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+<span>Refunds Status Center</span>
+<span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-label-sm px-2 py-0.5 rounded-full font-bold">Automated</span>
+</button>
+</div>
+<div class="flex items-center gap-2 pb-3 sm:pb-0">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Auto-Refresh:</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Live 5s
+            </span>
+</div>
+</div>
+<!-- TAB 1: SUPPORT LOGS & AUDIT TRAIL -->
+<div class="p-6 space-y-4" id="pane-audit-logs">
+<!-- Filters & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Search Inside Tab -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-outline">filter_list</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-xl text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-xs" id="logSearchInput" onkeyup="filterLogRows()" placeholder="Filter by customer, order, or query keywords..." type="text"/>
+</div>
+<!-- Status and Channel Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold mr-1">Status:</span>
+<button class="filter-pill px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-primary text-on-primary font-bold shadow-xs" onclick="setFilter('all', this)">All (342)</button>
+<button class="filter-pill px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium transition-colors" onclick="setFilter('automated', this)">Automated (294)</button>
+<button class="filter-pill px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium transition-colors" onclick="setFilter('approved', this)">Approved (318)</button>
+<button class="filter-pill px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium transition-colors" onclick="setFilter('rejected', this)">Rejected (24)</button>
+<button class="filter-pill px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium transition-colors" onclick="setFilter('escalated', this)">Escalated (11)</button>
+<div class="h-5 w-px bg-outline-variant/60 mx-1 hidden sm:block"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold mr-1">Channel:</span>
+<button class="px-2.5 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-label-sm font-label-sm text-on-surface font-semibold hover:bg-surface-container-low flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">language</span> Web
+              </button>
+<button class="px-2.5 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-label-sm font-label-sm text-on-surface font-semibold hover:bg-surface-container-low flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">smartphone</span> Mobile App
+              </button>
+</div>
+</div>
+<!-- Audit Table -->
+<div class="overflow-x-auto border border-outline-variant/70 rounded-xl custom-scroll">
+<table class="w-full text-left border-collapse text-body-sm">
+<thead>
+<tr class="bg-surface-container-low/70 border-b border-outline-variant/70 font-label-md text-label-md text-on-surface-variant">
+<th class="py-3 px-4 font-semibold">Timestamp</th>
+<th class="py-3 px-4 font-semibold">Customer</th>
+<th class="py-3 px-4 font-semibold">Order ID</th>
+<th class="py-3 px-4 font-semibold min-w-[280px]">Customer Query</th>
+<th class="py-3 px-4 font-semibold min-w-[260px]">Alexa Action Taken</th>
+<th class="py-3 px-4 font-semibold">Status</th>
+<th class="py-3 px-4 font-semibold text-right">Audit Details</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40 bg-surface-container-lowest" id="logsTableBody">
+<!-- Row 1: Sarah Jenkins -->
+<tr class="hover:bg-surface-container-low/40 transition-colors log-row" data-status="approved automated">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-medium text-on-surface">Today 10:24 AM</span>
+<span class="block text-[11px] text-outline font-label-sm">Session #AX-9941</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">SJ</div>
+<div>
+<p class="font-semibold text-on-surface">Sarah Jenkins</p>
+<p class="text-[11px] text-on-surface-variant">sarah.j@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-primary font-bold bg-primary/5 px-2 py-0.5 rounded border border-primary/20">#TM-89421</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface max-w-xs">
+<p class="truncate font-medium" title="Headband tight, request refund or swap for Bose QC Ultra">
+                      "Headband tight, request refund or swap for Bose QC Ultra"
+                    </p>
+<span class="text-[11px] text-outline">Category: Audio / Over-ear Headphones</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-start gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-emerald-600 flex-shrink-0 mt-0.5">check_circle</span>
+<div>
+<span class="font-medium">Automated Return Approved + Label Sent</span>
+<p class="text-[11px] text-emerald-700">Prepaid UPS Return Label #1Z984021</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Approved
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">read_more</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: David Miller -->
+<tr class="hover:bg-surface-container-low/40 transition-colors log-row" data-status="automated">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-medium text-on-surface">Today 10:18 AM</span>
+<span class="block text-[11px] text-outline font-label-sm">Session #AX-9938</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold text-xs">DM</div>
+<div>
+<p class="font-semibold text-on-surface">David Miller</p>
+<p class="text-[11px] text-on-surface-variant">d.miller@outlook.com</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-primary font-bold bg-primary/5 px-2 py-0.5 rounded border border-primary/20">#TM-89304</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface max-w-xs">
+<p class="truncate font-medium" title="Check delivery status for 65' OLED TV">
+                      "Check delivery status for 65' OLED TV"
+                    </p>
+<span class="text-[11px] text-outline">Carrier: FedEx Freight (Tracking #FX-7740)</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-start gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-blue-600 flex-shrink-0 mt-0.5">local_shipping</span>
+<div>
+<span class="font-medium">Order Tracking Summary Dispatched</span>
+<p class="text-[11px] text-blue-700">Delivery Scheduled Today 2:00-4:00 PM</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-blue-50 text-blue-700 border border-blue-200 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Dispatched
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">read_more</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Elena Rostova -->
+<tr class="hover:bg-surface-container-low/40 transition-colors log-row" data-status="automated">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-medium text-on-surface">Today 09:55 AM</span>
+<span class="block text-[11px] text-outline font-label-sm">Session #AX-9912</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">ER</div>
+<div>
+<p class="font-semibold text-on-surface">Elena Rostova</p>
+<p class="text-[11px] text-on-surface-variant">elena.rostova@edu.edu</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-primary font-bold bg-primary/5 px-2 py-0.5 rounded border border-primary/20">#TM-89112</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface max-w-xs">
+<p class="truncate font-medium" title="Price check on MacBook Air M3 with student discount">
+                      "Price check on MacBook Air M3 with student discount"
+                    </p>
+<span class="text-[11px] text-outline">Verified Student ID via SheerID API</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-start gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-indigo-600 flex-shrink-0 mt-0.5">percent</span>
+<div>
+<span class="font-medium">Catalog Price &amp; Promo Code Applied</span>
+<p class="text-[11px] text-indigo-700">Issued 10% Edu voucher: TECHEDU10</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-indigo-50 text-indigo-700 border border-indigo-200 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span> Promo Sent
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">read_more</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Michael Chang -->
+<tr class="hover:bg-surface-container-low/40 transition-colors log-row" data-status="rejected">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-medium text-on-surface">Today 09:32 AM</span>
+<span class="block text-[11px] text-outline font-label-sm">Session #AX-9889</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">MC</div>
+<div>
+<p class="font-semibold text-on-surface">Michael Chang</p>
+<p class="text-[11px] text-on-surface-variant">mchang88@yahoo.com</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-primary font-bold bg-primary/5 px-2 py-0.5 rounded border border-primary/20">#TM-88940</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface max-w-xs">
+<p class="truncate font-medium" title="Return wireless keyboard - missing USB dongle">
+                      "Return wireless keyboard - missing USB dongle"
+                    </p>
+<span class="text-[11px] text-outline">Purchased 46 days ago</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-start gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-rose-600 flex-shrink-0 mt-0.5">cancel</span>
+<div>
+<span class="font-medium text-rose-900">Refund Rejected: Outside 30-Day Window</span>
+<p class="text-[11px] text-rose-700">Automated notice explaining warranty vs return sent</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="group relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-rose-50 text-rose-700 border border-rose-200 font-bold uppercase tracking-wider cursor-help">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span> Rejected
+                      <!-- Reason Tooltip -->
+<span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 hidden group-hover:block w-48 p-2 bg-inverse-surface text-inverse-on-surface text-[11px] rounded-lg shadow-lg text-center normal-case font-normal z-30">
+                        Reason: Order delivered 46 days ago; standard 30-day return policy exceeded.
+                      </span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">read_more</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Amanda Brooks -->
+<tr class="hover:bg-surface-container-low/40 transition-colors log-row" data-status="automated escalated">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-medium text-on-surface">Today 09:15 AM</span>
+<span class="block text-[11px] text-outline font-label-sm">Session #AX-9870</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">AB</div>
+<div>
+<p class="font-semibold text-on-surface">Amanda Brooks</p>
+<p class="text-[11px] text-on-surface-variant">abrooks@studio.design</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-primary font-bold bg-primary/5 px-2 py-0.5 rounded border border-primary/20">#TM-88715</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface max-w-xs">
+<p class="truncate font-medium" title="Policy inquiry on open-box monitor warranty">
+                      "Policy inquiry on open-box monitor warranty"
+                    </p>
+<span class="text-[11px] text-outline">Dell UltraSharp 32' 4K Thunderbolt</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-start gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-amber-600 flex-shrink-0 mt-0.5">menu_book</span>
+<div>
+<span class="font-medium">Knowledge Policy Dispatched</span>
+<p class="text-[11px] text-amber-700">Escalated to Tier-2 Hardware Specialist</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-amber-50 text-amber-700 border border-amber-200 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Processing
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">read_more</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Status Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-on-surface-variant text-body-sm">
+<p>Showing <span class="font-semibold text-on-surface">1 - 5</span> of <span class="font-semibold text-on-surface">342</span> total session logs</p>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface disabled:opacity-40" disabled="">Previous</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold">1</button>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low">2</button>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low">69</button>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low">Next</button>
+</div>
+</div>
+</div>
+<!-- TAB 2: PRODUCT CATALOG QUICK VIEW -->
+<div class="p-6 space-y-6 hidden" id="pane-catalog">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Active Products in Inventory</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live hardware models referenced by Alexa AI for product recommendations and return validations.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Catalog Sync:</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">ERP Synced 10:20 AM</span>
+</div>
+</div>
+<!-- Product Grid / Bento Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+<!-- Product 1: Sony WH-1000XM5 -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 hover:shadow-md transition-all space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-[10px] tracking-wider uppercase text-primary font-extrabold bg-primary/10 px-2 py-0.5 rounded">Audio • Noise Cancelling</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1.5">Sony WH-1000XM5</h4>
+<p class="text-body-sm text-on-surface-variant">Model: WH1000XM5/B • SKU: #SNY-9941</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> In Stock
+                </span>
+</div>
+<div class="bg-surface-container-low/50 p-3 rounded-xl space-y-1.5 border border-outline-variant/40">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Retail Price:</span>
+<span class="font-bold text-on-surface">$399.99</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Best For:</span>
+<span class="font-medium text-primary">Commuting &amp; Studio Calls</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Specs:</span>
+<span class="text-on-surface font-mono text-xs">30h ANC, 8-mic array, LDAC</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-label-sm text-outline">Return Policy: 30-Day Guarantee</span>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span>AI Prompt Info</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 2: Bose QuietComfort Ultra -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 hover:shadow-md transition-all space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-[10px] tracking-wider uppercase text-primary font-extrabold bg-primary/10 px-2 py-0.5 rounded">Audio • Spatial Immersion</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1.5">Bose QuietComfort Ultra</h4>
+<p class="text-body-sm text-on-surface-variant">Model: 880066-0100 • SKU: #BSE-4412</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> In Stock
+                </span>
+</div>
+<div class="bg-surface-container-low/50 p-3 rounded-xl space-y-1.5 border border-outline-variant/40">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Retail Price:</span>
+<span class="font-bold text-on-surface">$429.00</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Best For:</span>
+<span class="font-medium text-primary">All-Day Comfort &amp; Immersive Audio</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Specs:</span>
+<span class="text-on-surface font-mono text-xs">CustomTune, 24h battery, Snapdragon Sound</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-label-sm text-outline">Return Policy: 30-Day Guarantee</span>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span>AI Prompt Info</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 3: LG C3 65" OLED -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 hover:shadow-md transition-all space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-[10px] tracking-wider uppercase text-primary font-extrabold bg-primary/10 px-2 py-0.5 rounded">TV &amp; Display • 4K OLED</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1.5">LG C3 65" OLED TV</h4>
+<p class="text-body-sm text-on-surface-variant">Model: OLED65C3PUA • SKU: #LGC-6533</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> In Stock
+                </span>
+</div>
+<div class="bg-surface-container-low/50 p-3 rounded-xl space-y-1.5 border border-outline-variant/40">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Retail Price:</span>
+<span class="font-bold text-on-surface">$1,599.99</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Best For:</span>
+<span class="font-medium text-primary">Gaming (120Hz) &amp; Home Theater</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Specs:</span>
+<span class="text-on-surface font-mono text-xs">α9 AI Gen6, 4x HDMI 2.1, G-Sync</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-label-sm text-outline">Delivery: White-Glove Freight</span>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span>AI Prompt Info</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 4: Apple MacBook Air M3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 hover:shadow-md transition-all space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-[10px] tracking-wider uppercase text-primary font-extrabold bg-primary/10 px-2 py-0.5 rounded">Computing • Laptops</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1.5">Apple MacBook Air M3</h4>
+<p class="text-body-sm text-on-surface-variant">Model: MRX33LL/A • SKU: #APL-M313</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> In Stock
+                </span>
+</div>
+<div class="bg-surface-container-low/50 p-3 rounded-xl space-y-1.5 border border-outline-variant/40">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Retail Price:</span>
+<span class="font-bold text-on-surface">$1,099.00</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Best For:</span>
+<span class="font-medium text-primary">Students &amp; Creative Professionals</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Specs:</span>
+<span class="text-on-surface font-mono text-xs">Apple M3 8-Core, 16GB, 512GB SSD</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-label-sm text-outline">Edu Discount: Eligible (10%)</span>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span>AI Prompt Info</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 5: Logitech MX Master 3S -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 hover:shadow-md transition-all space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-[10px] tracking-wider uppercase text-rose-700 font-extrabold bg-rose-50 px-2 py-0.5 rounded">Peripherals • Mice</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1.5">Logitech MX Master 3S</h4>
+<p class="text-body-sm text-on-surface-variant">Model: 910-006557 • SKU: #LOG-3S88</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-rose-50 text-rose-700 border border-rose-200 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span> Low Stock (3 left)
+                </span>
+</div>
+<div class="bg-surface-container-low/50 p-3 rounded-xl space-y-1.5 border border-outline-variant/40">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Retail Price:</span>
+<span class="font-bold text-on-surface">$99.99</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Best For:</span>
+<span class="font-medium text-primary">Ergonomics &amp; Multi-Device Flow</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Specs:</span>
+<span class="text-on-surface font-mono text-xs">8K DPI Glass Sensor, Quiet Clicks</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-label-sm text-outline">Return Policy: 30-Day Guarantee</span>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span>AI Prompt Info</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Add Product Card Placeholder -->
+<div class="border-2 border-dashed border-outline-variant/80 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-primary/50 transition-colors bg-surface-container-low/20">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Add New SKU to Alexa Catalog</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">Upload CSV or ingest from Shopify / Magento warehouse connectors.</p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-low transition-colors">
+                Import Catalog Feed
+              </button>
+</div>
+</div>
+</div>
+<!-- TAB 3: REFUNDS STATUS CENTER -->
+<div class="p-6 space-y-6 hidden" id="pane-refunds-center">
+<!-- Automation Protocol Banner -->
+<div class="bg-gradient-to-r from-primary-container to-primary rounded-2xl p-6 text-on-primary shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-white/20 text-on-primary text-[10px] font-bold uppercase tracking-wider">Alexa Automation Policy Engine</span>
+<span class="text-white/80 text-xs">v2.4 Active Ruleset</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-white">Smart Refund Resolution Rules</h3>
+<p class="text-white/90 text-body-sm leading-relaxed">
+<strong>When Approved:</strong> Automated confirmation email is immediately generated and dispatched with a prepaid UPS/FedEx shipping label and return QR code.<br/>
+<strong>When Rejected:</strong> A clear, transparent justification is dynamically provided in polite natural language (e.g. <em>"Outside 30-Day Guarantee period"</em> or <em>"Consumable item opened"</em>) accompanied by manufacturer warranty options.
+                </p>
+</div>
+<div class="flex-shrink-0 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 text-center min-w-[200px]">
+<span class="block text-white/80 text-label-sm uppercase font-bold">Avg Decision Time</span>
+<span class="block text-3xl font-extrabold text-white mt-0.5">1.8s</span>
+<span class="text-emerald-300 text-xs font-semibold">Zero Human Lag</span>
+</div>
+</div>
+</div>
+<!-- Refund Lifecycle Visual Breakdown Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+<!-- Eligible -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-blue-700">1. Eligible</span>
+<span class="material-symbols-outlined text-[18px] text-blue-600">verified</span>
+</div>
+<p class="text-2xl font-bold text-on-surface mt-2">14</p>
+<p class="text-[12px] text-on-surface-variant mt-1">Pending customer label generation</p>
+</div>
+<!-- Approved -->
+<div class="bg-surface-container-lowest border border-emerald-200 bg-emerald-50/20 rounded-xl p-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-emerald-700">2. Approved</span>
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+</div>
+<p class="text-2xl font-bold text-emerald-900 mt-2">318</p>
+<p class="text-[12px] text-emerald-700 mt-1">Prepaid shipping labels emailed</p>
+</div>
+<!-- Processing -->
+<div class="bg-surface-container-lowest border border-amber-200 bg-amber-50/20 rounded-xl p-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-amber-700">3. Processing</span>
+<span class="material-symbols-outlined text-[18px] text-amber-600">sync</span>
+</div>
+<p class="text-2xl font-bold text-amber-900 mt-2">29</p>
+<p class="text-[12px] text-amber-700 mt-1">In transit back to fulfillment center</p>
+</div>
+<!-- Not Eligible -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">4. Not Eligible</span>
+<span class="material-symbols-outlined text-[18px] text-outline">block</span>
+</div>
+<p class="text-2xl font-bold text-on-surface mt-2">16</p>
+<p class="text-[12px] text-on-surface-variant mt-1">Digital software &amp; customized SKUs</p>
+</div>
+<!-- Rejected -->
+<div class="bg-surface-container-lowest border border-rose-200 bg-rose-50/20 rounded-xl p-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-rose-700">5. Rejected</span>
+<span class="material-symbols-outlined text-[18px] text-rose-600">cancel</span>
+</div>
+<p class="text-2xl font-bold text-rose-900 mt-2">24</p>
+<p class="text-[12px] text-rose-700 mt-1">Outside policy with reasons logged</p>
+</div>
+</div>
+<!-- Refund Decision Audit Feed -->
+<div class="border border-outline-variant/70 rounded-xl p-5 bg-surface-container-lowest space-y-4">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recent Alexa Automated Return Decisions</h4>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/40 border border-outline-variant/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Order #TM-89421 (Sarah Jenkins)</span>
+<span class="font-mono text-xs text-outline">Sony WH-1000XM5</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Automated approval trigger: Within 14-day zero-friction exchange window. Return reason: Fit comfort.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 self-start sm:self-center">
+                  Label Dispatched
+                </span>
+</div>
+<!-- Item 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low/40 border border-outline-variant/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Order #TM-88940 (Michael Chang)</span>
+<span class="font-mono text-xs text-outline">Keychron K2 Wireless</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Rejected by rule: Day-count = 46 (&gt;30 day policy). Sent manufacturer warranty RMA hyperlink.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 self-start sm:self-center">
+                  Notice Delivered
+                </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE SYSTEM PERFORMANCE FOOTER MODULE -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 pb-8">
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/60 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Alexa AI Model Health</span>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface">LLM Gateway: Nominal</p>
+<p class="font-body-sm text-xs text-emerald-700">0 dropped calls • 99.98% uptime</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/60 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">warehouse</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Inventory Webhook</span>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface">5,420 SKUs Active</p>
+<p class="font-body-sm text-xs text-on-surface-variant">Last pinged: 32 seconds ago</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/60 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0 border border-amber-200">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Compliance &amp; Audit</span>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface">SOC2 Type II Active</p>
+<p class="font-body-sm text-xs text-on-surface-variant">Immutable logging ledger enabled</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- INTERACTION SCRIPTS -->
+<script>
+    function switchTab(tabId) {
+      // Hide all panes
+      document.getElementById('pane-audit-logs').classList.add('hidden');
+      document.getElementById('pane-catalog').classList.add('hidden');
+      document.getElementById('pane-refunds-center').classList.add('hidden');
+
+      // Reset all buttons
+      const btnAudit = document.getElementById('tab-btn-audit');
+      const btnCatalog = document.getElementById('tab-btn-catalog');
+      const btnRefunds = document.getElementById('tab-btn-refunds');
+
+      [btnAudit, btnCatalog, btnRefunds].forEach(btn => {
+        btn.classList.remove('text-primary', 'border-primary', 'font-bold');
+        btn.classList.add('text-on-surface-variant', 'border-transparent');
+      });
+
+      if (tabId === 'audit-logs') {
+        document.getElementById('pane-audit-logs').classList.remove('hidden');
+        btnAudit.classList.add('text-primary', 'border-primary', 'font-bold');
+        btnAudit.classList.remove('text-on-surface-variant', 'border-transparent');
+      } else if (tabId === 'catalog') {
+        document.getElementById('pane-catalog').classList.remove('hidden');
+        btnCatalog.classList.add('text-primary', 'border-primary', 'font-bold');
+        btnCatalog.classList.remove('text-on-surface-variant', 'border-transparent');
+      } else if (tabId === 'refunds-center') {
+        document.getElementById('pane-refunds-center').classList.remove('hidden');
+        btnRefunds.classList.add('text-primary', 'border-primary', 'font-bold');
+        btnRefunds.classList.remove('text-on-surface-variant', 'border-transparent');
+      }
+    }
+
+    function setFilter(filterType, element) {
+      const pills = document.querySelectorAll('.filter-pill');
+      pills.forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        p.classList.add('bg-surface-container-low', 'text-on-surface-variant', 'font-medium');
+      });
+      element.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+      element.classList.remove('bg-surface-container-low', 'text-on-surface-variant', 'font-medium');
+
+      const rows = document.querySelectorAll('.log-row');
+      rows.forEach(row => {
+        if (filterType === 'all') {
+          row.style.display = '';
+        } else {
+          const status = row.getAttribute('data-status') || '';
+          if (status.includes(filterType)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    function filterLogRows() {
+      const input = document.getElementById('logSearchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('.log-row');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        if (text.includes(input)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body></html>

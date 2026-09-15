@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/techmart_alexa_ai_customer_support_workspace/code.html" },
+    { "source": "/code.html", "destination": "/techmart_alexa_ai_customer_support_workspace/code.html" }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "modelName": "MacBook Air M3",
+    "brand": "Apple",
+    "category": "Laptop",
+    "price": 799.99,
+    "stock": 8,
+    "availability": "In Stock",
+    "bestFor": "Students & Professionals",
+    "specifications": "13.6-inch, Apple M3, 16GB RAM, 512GB SSD"
+  },
+  {
+    "modelName": "WH-1000XM5",
+    "brand": "Sony",
+    "category": "Headphones",
+    "price": 59.99,
+    "stock": 22,
+    "availability": "In Stock",
+    "bestFor": "Music & Travel",
+    "specifications": "Noise Cancelling, 30hr Battery"
+  }
+]
